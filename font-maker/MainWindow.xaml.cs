@@ -24,5 +24,18 @@ namespace font_maker
         {
             InitializeComponent();
         }
+
+        private void GoButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Int32.TryParse(RowTextBox.Text, out int row) && Int32.TryParse(ColTextBox.Text, out int col))
+            {
+                new DrawWindow(row, col).Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Wrong input! only number is allowed.");
+            }
+        }
     }
 }

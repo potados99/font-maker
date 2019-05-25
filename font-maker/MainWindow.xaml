@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:font_maker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Launcher" Height="200" Width="200">
     <Grid>
-        
+        <Grid Height="150" Width="160">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Width="50" Height="40" Content="Row" FontSize="20" Grid.Row="0" Grid.Column="0"/>
+            <Label Width="80" Height="40" Content="Column" FontSize="20" Grid.Row="1" Grid.Column="0"/>
+
+            <TextBox Width="40" Height="30" Text="8" FontSize="20" Grid.Row="0" Grid.Column="1" Name="RowTextBox"/>
+            <TextBox Width="40" Height="30" Text="8" FontSize="20" Grid.Row="1" Grid.Column="1" Name="ColTextBox"/>
+
+            <Button Height="30" Content="Go" Grid.Row="2" Grid.ColumnSpan="2" Name="GoButton" Click="GoButton_Click"/>
+
+        </Grid>
+
     </Grid>
 </Window>
