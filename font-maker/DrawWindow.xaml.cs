@@ -104,6 +104,10 @@ namespace font_maker
             {
                 Mark(sender as Label);
             }
+            else if (Mouse.RightButton == MouseButtonState.Pressed)
+            {
+                UnMark(sender as Label);
+            }
         }
 
         private void Box_MouseEnter(object sender, MouseEventArgs e)
@@ -111,6 +115,10 @@ namespace font_maker
             if (Mouse.LeftButton == MouseButtonState.Pressed)
             {
                 Mark(sender as Label);
+            }
+            else if (Mouse.RightButton == MouseButtonState.Pressed)
+            {
+                UnMark(sender as Label);
             }
         }
 
