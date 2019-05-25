@@ -77,6 +77,7 @@ namespace font_maker
                     box.MouseEnter += Box_MouseEnter;
                     box.MouseMove += Box_MouseMove;
                     box.MouseLeftButtonDown += Box_MouseLeftButtonDown;
+                    box.MouseRightButtonDown += Box_MouseRightButtonDown;
 
                     oneRowPanel.Children.Add(box);
                 }
@@ -85,6 +86,11 @@ namespace font_maker
             }
 
             container.Children.Add(rowsPanel);
+        }
+
+        private void Box_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            UnMark(sender as Label);
         }
 
         private void Box_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -113,6 +119,13 @@ namespace font_maker
             label.Background = new SolidColorBrush(Colors.Black);
             Point point = (Point)label.Tag;
             Pixels[(int)point.Y, (int)point.X] = true;
+        }
+
+        private void UnMark(Label label)
+        {
+            label.Background = new SolidColorBrush(Colors.White);
+            Point point = (Point)label.Tag;
+            Pixels[(int)point.Y, (int)point.X] = false;
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
